@@ -10,8 +10,9 @@
   ],
   "scripts": {
     "clean": "lerna run --parallel clean",
-    "dev": "lerna run --parallel dev --scope \"@iudex/api\"",
-    "api": "yarn workspace @iudex/api"
+    "dev": "lerna run --parallel dev --scope \"@iudex/{api,app}\"",
+    "api": "yarn workspace @iudex/api",
+    "app": "yarn workspace @iudex/app"
   },
   "dependencies": {},
   "devDependencies": {
