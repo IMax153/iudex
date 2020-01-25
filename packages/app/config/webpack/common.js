@@ -51,7 +51,9 @@ module.exports = {
           IS_PRODUCTION ? MiniCssExtractPlugin.loader : require.resolve("style-loader"),
           {
             loader: require.resolve('css-loader'),
-            options: { importLoaders: 1 }
+            options: {
+              importLoaders: 1
+            }
           },
           require.resolve('sass-loader'),
         ],

@@ -14,7 +14,6 @@
     "api": "yarn workspace @iudex/api",
     "app": "yarn workspace @iudex/app"
   },
-  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
