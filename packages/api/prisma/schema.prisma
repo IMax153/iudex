@@ -10,6 +10,7 @@ generator client {
 model Form {
   id        String      @id @default(cuid())
   fields    FormField[]
+  owner     User
   createdAt DateTime    @default(now())
   updatedAt DateTime    @updatedAt
 }
@@ -18,8 +19,20 @@ model FormField {
   id        String        @id @default(cuid())
   name      String
   type      FormFieldType
+  form      Form
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
+}
+
+model User {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String   @unique
+  password  String
+  forms     Form[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum FormFieldType {
