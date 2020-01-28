@@ -3,13 +3,30 @@
   "steps": [
     {
       "tag": "CreateEnum",
-      "enum": "FormFieldType",
+      "enum": "InputType",
       "values": [
+        "Button",
+        "Checkbox",
+        "Color",
         "Date",
-        "DateTime",
+        "DateTimeLocal",
+        "Email",
+        "File",
+        "Hidden",
+        "Image",
+        "Month",
         "Number",
-        "Select",
-        "String"
+        "Password",
+        "Radio",
+        "Range",
+        "Reset",
+        "Search",
+        "Submit",
+        "Tel",
+        "Text",
+        "Time",
+        "Url",
+        "Week"
       ]
     },
     {
@@ -203,7 +220,7 @@
       "tag": "CreateField",
       "model": "FormField",
       "field": "type",
-      "type": "FormFieldType",
+      "type": "InputType",
       "arity": "Required"
     },
     {

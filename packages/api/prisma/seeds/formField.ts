@@ -1,11 +1,11 @@
 import { PrismaClient, Form, FormFieldCreateInput } from '@prisma/client';
 import faker from 'faker';
 
-import { createMany, formFieldTypes } from './utils';
+import { createMany, inputTypes } from './utils';
 
 const generateFormField = (forms: Form[]): FormFieldCreateInput => ({
   name: faker.lorem.word(),
-  type: faker.random.arrayElement(formFieldTypes),
+  type: faker.random.arrayElement(inputTypes),
   form: { connect: { id: faker.random.arrayElement(forms).id } },
 });
 
