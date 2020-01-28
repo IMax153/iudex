@@ -376,6 +376,13 @@
     {
       "tag": "CreateField",
       "model": "User",
+      "field": "refreshTokenId",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
       "field": "createdAt",
       "type": "DateTime",
       "arity": "Required"
