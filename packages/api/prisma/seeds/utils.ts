@@ -1,8 +1,11 @@
 import { InputType } from '@prisma/client';
+import faker from 'faker';
 
 export const createMany = <T>(length: number, fn: () => T): T[] => {
   return Array.from({ length }).map(() => fn());
 };
+
+export const nullable = <T>(item: T): T | null => faker.random.arrayElement([item, null]);
 
 export const inputTypes: InputType[] = [
   InputType.Button,

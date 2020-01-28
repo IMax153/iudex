@@ -5,6 +5,7 @@ export const FormType = objectType({
   description: 'A custom evaluation form created by a user',
   definition: t => {
     t.model.id();
+    t.model.name();
     t.model.owner();
     t.model.fields();
     t.model.createdAt();

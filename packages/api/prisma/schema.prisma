@@ -9,6 +9,7 @@ generator client {
 
 model Form {
   id        String      @id @default(cuid())
+  name      String
   fields    FormField[]
   owner     User
   createdAt DateTime    @default(now())

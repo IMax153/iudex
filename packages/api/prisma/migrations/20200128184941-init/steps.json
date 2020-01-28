@@ -101,6 +101,13 @@
     {
       "tag": "CreateField",
       "model": "Form",
+      "field": "name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Form",
       "field": "fields",
       "type": "FormField",
       "arity": "List"
