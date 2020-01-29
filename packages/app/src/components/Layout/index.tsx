@@ -19,7 +19,7 @@ import { useStyles } from './styles';
 
 interface Props {}
 
-export const Layout: React.FC<Props> = () => {
+export const Layout: React.FC<Props> = ({ children }) => {
   const theme = useTheme();
   const classes = useStyles();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -113,6 +113,7 @@ export const Layout: React.FC<Props> = () => {
             />
           </Toolbar>
         </AppBar>
+        {children}
       </Box>
     </Box>
   );
