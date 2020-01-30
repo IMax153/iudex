@@ -1,0 +1,25 @@
+overwrite: true
+schema:
+  - packages/api/src/generated/schema.graphql
+documents:
+  - packages/app/src/**/*.{graphql,ts,tsx}
+  - packages/app/src/!generated/**/*.{graphql,ts,tsx}
+generates:
+  packages/app/src/generated/introspection-result.ts:
+    plugins:
+      - fragment-matcher
+  packages/app/src/generated/graphql.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHOC: false
+      withComponent: false
+      withHooks: true
+      maybeValue: T | undefined
+      skipTypename: true
+hooks:
+  afterAllFileWrite:
+    - eslint --fix
+    - prettier --write

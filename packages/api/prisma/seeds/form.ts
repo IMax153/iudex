@@ -4,6 +4,7 @@ import faker from 'faker';
 import { createMany } from './utils';
 
 const generateForm = (users: User[]): FormCreateInput => ({
+  name: faker.company.companyName(),
   owner: { connect: { id: faker.random.arrayElement(users).id } },
 });
 

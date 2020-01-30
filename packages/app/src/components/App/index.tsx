@@ -4,6 +4,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import { Apollo } from '../Apollo';
 import { DataTable } from '../DataTable';
+import { FormBuilder } from '../FormBuilder';
 import { Layout } from '../Layout';
 
 interface Props {}
@@ -107,6 +108,7 @@ export const App: React.FC<Props> = ({ children }) => {
       >
         <CssBaseline />
         <Layout>
+          <FormBuilder />
           <DataTable
             title="Data Table"
             columns={['Name', 'Title', 'Location', 'Age', 'Salary']}

@@ -9,7 +9,6 @@
   "scripts": {
     "build": "yarn run clean && webpack -p --config=config/webpack/production.js",
     "clean": "rimraf dist",
-    "codegen": "graphql-codegen --config config/codegen.yml",
     "dev": "webpack-dev-server --config=config/webpack/development.js",
     "prod": "yarn run build && node server.js",
     "precommit": "lint-staged"
@@ -19,11 +18,6 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
-    "@graphql-codegen/cli": "^1.9.1",
-    "@graphql-codegen/fragment-matcher": "^1.9.1",
-    "@graphql-codegen/typescript": "^1.9.1",
-    "@graphql-codegen/typescript-operations": "^1.9.1",
-    "@graphql-codegen/typescript-react-apollo": "^1.9.1",
     "@types/jwt-decode": "^2.2.1",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",

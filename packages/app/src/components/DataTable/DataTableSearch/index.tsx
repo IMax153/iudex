@@ -23,6 +23,7 @@ export const DataTableSearch: React.FC<Props> = () => {
       margin="dense"
       size="small"
       variant="outlined"
+      placeholder="Search table..."
       value={searchTerm}
       inputProps={{
         className: classes.searchInput,
