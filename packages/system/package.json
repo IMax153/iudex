@@ -1,0 +1,39 @@
+{
+  "name": "@iudex/system",
+  "version": "0.1.0",
+  "description": "The design system for Iudex.",
+  "main": "dist/index.js",
+  "author": "Maxwell Brown <maxwellbrown1990@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "",
+    "clean": "rimraf dist",
+    "dev": "",
+    "storybook": "start-storybook",
+    "precommit": "lint-staged"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^5.3.10",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^4.4.2",
+    "@types/styled-system": "^5.1.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6"
+  },
+  "dependencies": {
+    "styled-components": "^5.0.0",
+    "styled-system": "^5.1.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}
