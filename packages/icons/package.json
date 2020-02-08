@@ -1,0 +1,17 @@
+{
+  "name": "@iudex/icons",
+  "version": "0.1.0",
+  "description": "The icon library for Iudex.",
+  "main": "dist/index.js",
+  "author": "Maxwell Brown <maxwellbrown1990@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "yarn run clean",
+    "clean": "rimraf dist",
+    "dev": "",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

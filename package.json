@@ -36,10 +36,5 @@
     "lint-staged": "^10.0.3",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lerna run --concurrency 1 --stream precommit"
-    }
   }
 }
