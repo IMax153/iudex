@@ -32,6 +32,7 @@
     "@types/styled-system__theme-get": "^5.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "csstype": "^2.6.8",
     "react-element-to-jsx-string": "^14.3.1"
   },
   "dependencies": {

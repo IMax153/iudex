@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 
 import { INTENT, Intent, SIZE, Size } from '../common/constants';
-import { getSpaceAfter, SpaceAfter } from '../theme/utils';
+import { getSpaceAfter, SPACE_AFTER, SpaceAfter } from '../theme/utils';
 import { Loading } from '../Loading';
 import { StyledButton, StyledButtonContent } from './styles';
 
@@ -23,7 +23,7 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Prop
     {
       intent = INTENT.NONE,
       size = SIZE.MEDIUM,
-      spaceAfter,
+      spaceAfter = SPACE_AFTER.NONE,
       type = 'button',
       dataTest,
       tabIndex = 0,

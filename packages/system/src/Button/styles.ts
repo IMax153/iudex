@@ -11,7 +11,7 @@ import { StyledLoadingSpinner } from '../Loading/styles';
 export interface StyledButtonProps {
   intent: Intent;
   size: Size;
-  spaceAfter?: SpaceAfter;
+  spaceAfter: SpaceAfter;
   disabled: boolean;
   fullWidth: boolean;
 }
