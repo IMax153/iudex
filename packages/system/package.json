@@ -19,15 +19,25 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-info": "^5.3.12",
+    "@storybook/addon-knobs": "^5.3.12",
     "@storybook/react": "^5.3.10",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
+    "@types/storybook__addon-info": "^5.2.1",
     "@types/styled-components": "^4.4.2",
     "@types/styled-system": "^5.1.6",
+    "@types/styled-system__css": "^5.0.4",
+    "@types/styled-system__theme-get": "^5.0.0",
     "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "react-element-to-jsx-string": "^14.3.1"
   },
   "dependencies": {
+    "@styled-system/css": "^5.1.4",
+    "@styled-system/theme-get": "^5.1.2",
+    "polished": "^3.4.4",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.4"
   },
