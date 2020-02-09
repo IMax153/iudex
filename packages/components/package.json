@@ -1,5 +1,5 @@
 {
-  "name": "@iudex/system",
+  "name": "@iudex/components",
   "version": "0.1.0",
   "description": "The design system for Iudex.",
   "main": "dist/index.js",
