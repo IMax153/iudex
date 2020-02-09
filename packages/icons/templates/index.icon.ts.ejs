@@ -1,0 +1,5 @@
+<% icons.forEach(({ name }) => { -%>
+export { <%- toComponentName(name) %> } from './<%- stripFileExtension(toReactFileName(name)) %>';
+<% }) %>
+
+
