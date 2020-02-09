@@ -1,0 +1,11 @@
+import * as I from './icons';
+import { Icons } from './types';
+
+export * from './icons';
+export * from './types';
+
+export const icons: Icons = {
+<% icons.forEach(({ name }) => { -%>
+  '<%- stripFileExtension(name) %>': I.<%- toComponentName(name) %>,
+<% }) %>
+}
