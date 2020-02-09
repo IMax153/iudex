@@ -13,7 +13,8 @@
     "dev": "lerna run --parallel dev --scope \"@iudex/{api,app}\"",
     "codegen": "graphql-codegen --config codegen.yml",
     "api": "yarn workspace @iudex/api",
-    "app": "yarn workspace @iudex/app"
+    "app": "yarn workspace @iudex/app",
+    "icons": "yarn workspace @iudex/icons"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.9.1",
