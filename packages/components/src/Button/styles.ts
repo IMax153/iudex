@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { variant } from 'styled-system';
-import { css, SystemCssProperties } from '@styled-system/css';
+import { css, SystemStyleObject } from '@styled-system/css';
+import { themeGet } from '@styled-system/theme-get';
+import { darken } from 'polished';
 
 import { INTENT, Intent, SIZE, Size } from '../common/constants';
 import { WithTheme } from '../theme';
@@ -20,8 +22,13 @@ interface StyledButtonContentProps {
   loading?: boolean;
 }
 
+interface StyledButtonIconProps {
+  intent: Intent;
+  size: Size;
+}
+
 const intent = (props: WithTheme<StyledButtonProps>) =>
-  variant<SystemCssProperties, Intent, 'intent'>({
+  variant<SystemStyleObject, Intent, 'intent'>({
     prop: 'intent',
     variants: {
       [INTENT.NONE]: {
@@ -64,7 +71,7 @@ const intent = (props: WithTheme<StyledButtonProps>) =>
     },
   });
 
-const size = variant<SystemCssProperties, Size, 'size'>({
+const size = variant<SystemStyleObject, Size, 'size'>({
   prop: 'size',
   variants: {
     [SIZE.SMALL]: {
@@ -96,6 +103,63 @@ const size = variant<SystemCssProperties, Size, 'size'>({
     },
   },
 });
+
+const iconIntent = (props: WithTheme<StyledButtonIconProps>) =>
+  variant<SystemStyleObject, Intent, 'intent'>({
+    prop: 'intent',
+    variants: {
+      [INTENT.NONE]: {
+        '& > svg': {
+          fill: themeGet('colors.text')(props),
+        },
+      },
+      [INTENT.INFO]: {
+        '& > svg': {
+          fill: themeGet('colors.white')(props),
+        },
+      },
+      [INTENT.SUCCESS]: {
+        '& > svg': {
+          fill: themeGet('colors.white')(props),
+        },
+      },
+      [INTENT.WARNING]: {
+        '& > svg': {
+          fill: themeGet('colors.white')(props),
+        },
+      },
+      [INTENT.DANGER]: {
+        '& > svg': {
+          fill: themeGet('colors.white')(props),
+        },
+      },
+    },
+  });
+
+const iconSize = (props: WithTheme<StyledButtonIconProps>) =>
+  variant<SystemStyleObject, Size, 'size'>({
+    prop: 'size',
+    variants: {
+      [SIZE.SMALL]: {
+        '& > svg': {
+          height: themeGet('sizes.2')(props),
+          width: themeGet('sizes.2')(props),
+        },
+      },
+      [SIZE.MEDIUM]: {
+        '& > svg': {
+          height: themeGet('sizes.3')(props),
+          width: themeGet('sizes.3')(props),
+        },
+      },
+      [SIZE.LARGE]: {
+        '& > svg': {
+          height: themeGet('sizes.4')(props),
+          width: themeGet('sizes.4')(props),
+        },
+      },
+    },
+  });
 
 export const StyledButton = styled.button<StyledButtonProps>`
   ${intent}
@@ -131,4 +195,14 @@ export const StyledButtonContent = styled.div<StyledButtonContentProps>`
       height: '100%',
       visibility: props.loading ? 'hidden' : 'visible',
     })}
+`;
+
+export const StyledButtonIcon = styled.div<StyledButtonIconProps>`
+  ${iconIntent}
+  ${iconSize}
+  ${css({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  })}
 `;

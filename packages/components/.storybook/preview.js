@@ -8,8 +8,7 @@ import { theme } from '../src/theme';
 import { GlobalStyles } from '../src/GlobalStyles';
 
 const Main = styled.main`
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   padding: 20px;
 `;
 

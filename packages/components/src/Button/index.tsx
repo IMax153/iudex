@@ -1,11 +1,14 @@
 import React, { PropsWithChildren } from 'react';
+import { icons, IconName } from '@iudex/icons';
 
 import { INTENT, Intent, SIZE, Size } from '../common/constants';
-import { getSpaceAfter, SPACE_AFTER, SpaceAfter } from '../theme/utils';
+import { SPACE_AFTER, SpaceAfter } from '../theme/utils';
 import { Loading } from '../Loading';
-import { StyledButton, StyledButtonContent } from './styles';
+import { StyledButton, StyledButtonContent, StyledButtonProps, StyledButtonIcon } from './styles';
 
 interface Props {
+  startIcon?: IconName;
+  endIcon?: IconName;
   intent?: Intent;
   size?: Size;
   spaceAfter?: SpaceAfter;
@@ -21,6 +24,8 @@ interface Props {
 export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Props>>(
   (
     {
+      startIcon,
+      endIcon,
       intent = INTENT.NONE,
       size = SIZE.MEDIUM,
       spaceAfter = SPACE_AFTER.NONE,
@@ -35,6 +40,9 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Prop
     },
     ref,
   ) => {
+    const StartIcon = startIcon ? icons[startIcon] : undefined;
+    const EndIcon = endIcon ? icons[endIcon] : undefined;
+
     return (
       <StyledButton
         data-test={dataTest}
@@ -51,7 +59,21 @@ export const Button = React.forwardRef<HTMLButtonElement, PropsWithChildren<Prop
         {loading && <Loading variant="button" />}
 
         {children && (
-          <StyledButtonContent loading={loading || undefined}>{children}</StyledButtonContent>
+          <StyledButtonContent loading={loading || undefined}>
+            {StartIcon && (
+              <StyledButtonIcon intent={intent} size={size}>
+                <StartIcon />
+              </StyledButtonIcon>
+            )}
+
+            {children}
+
+            {EndIcon && (
+              <StyledButtonIcon intent={intent} size={size}>
+                <EndIcon />
+              </StyledButtonIcon>
+            )}
+          </StyledButtonContent>
         )}
       </StyledButton>
     );

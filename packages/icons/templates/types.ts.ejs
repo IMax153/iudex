@@ -1,8 +1,0 @@
-import React from 'react';
-
-export type IconName =
-  <% icons.forEach(({ name }) => { -%>
-    | '<%- stripFileExtension(name) %>'
-  <% }) %>;
-
-export type Icons = Record<IconName, React.FC<{}>>;

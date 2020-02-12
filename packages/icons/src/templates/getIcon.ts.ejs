@@ -1,0 +1,14 @@
+import React from 'react';
+
+import * as I from './icons';
+import { Icons, IconName } from './types';
+
+const icons: Icons = {
+<% icons.forEach(icon => { -%>
+  '<%- stripFileExtension(icon) %>': I.<%- toComponentName(icon) %>,
+<% }) %>
+}
+
+export const getIcon = (iconName: IconName): React.FC<React.SVGProps<SVGSVGElement>> => {
+  return icons[iconName];
+}

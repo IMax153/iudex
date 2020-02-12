@@ -1,0 +1,3 @@
+<% icons.forEach(icon => { -%>
+export { <%- toComponentName(stripFileExtension(icon)) %> } from './<%- toComponentName(stripFileExtension(icon)) %>';
+<% }) %>

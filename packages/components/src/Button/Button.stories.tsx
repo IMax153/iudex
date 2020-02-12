@@ -1,4 +1,5 @@
 import React from 'react';
+import { icons, IconName } from '@iudex/icons';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
@@ -6,6 +7,7 @@ import { INTENT, SIZE } from '../common/constants';
 import { SPACE_AFTER } from '../theme/utils';
 import { Button } from './index';
 
+const iconOptions = Object.keys(icons) as IconName[];
 const intentOptions = Object.values(INTENT);
 const sizeOptions = Object.values(SIZE);
 const spaceAfterOptions = Object.values(SPACE_AFTER);
@@ -110,12 +112,16 @@ export const Playground = () => {
   const fullWidth = boolean('FullWidth', false);
   const loading = boolean('Loading', false);
   const dataTest = text('DataTest', 'test');
+  const startIcon = select('StartIcon', iconOptions, undefined);
+  const endIcon = select('EndIcon', iconOptions, undefined);
   const intent = select('Intent', intentOptions, 'none');
   const size = select('Size', sizeOptions, 'medium');
   const spaceAfter = select('SpaceAfter', spaceAfterOptions, 'none');
 
   return (
     <Button
+      startIcon={startIcon}
+      endIcon={endIcon}
       intent={intent}
       size={size}
       spaceAfter={spaceAfter}

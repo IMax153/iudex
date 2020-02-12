@@ -36,6 +36,7 @@
     "react-element-to-jsx-string": "^14.3.1"
   },
   "dependencies": {
+    "@iudex/icons": "^0.1.0",
     "@styled-system/css": "^5.1.4",
     "@styled-system/theme-get": "^5.1.2",
     "polished": "^3.4.4",
